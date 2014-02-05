@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8" />
+        <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+        <link href="styles/main.css" rel="stylesheet" />
+
+        <script src="cordova.js"></script>
+        <script src="kendo/js/jquery.min.js"></script>
+        <script src="kendo/js/kendo.mobile.min.js"></script>
+      
+
+       
+        <script src="scripts/app.js"></script>
+
+    </head>
+    <body>
+        <!--Home-->
+        <div id="tabstrip-home" 
+             data-role="view"  
+             data-title="RecycleApp">
+
+            <div data-role="content" class="view-content">
+                <h1>Welcome!</h1>
+                <a id="skin-change" data-role="button" data-click="app.changeSkin">Flat</a>
+                <ul data-role="listview" data-style="inset" data-type="group">
+        <li>
+            History
+            <ul>
+                <li> <a class="button selected-button" data-role="button" href="#tabstrip-login">STATISTICS</a></li>
+            </ul>
+        </li>
+        <li>
+            F.A.Q
+            <ul>
+                <li><a class="button selected-button" data-role="button" href="#tabstrip-login">QUICK QUESTIONS</a></li>
+                <li><a class="button selected-button" data-role="button" href="#tabstrip-login">MAJOR QUESTIONS</a></li>
+                
+            </ul>
+        </li>
+        <li>
+            RECYCLABLE
+             <ul>
+                <li><a class="button selected-button" data-role="button" href="#tabstrip-login">PLASTICS</a></li>
+                <li><a class="button selected-button" data-role="button" href="#tabstrip-login">PAPER</a></li>
+                
+            </ul>
+        </li>
+        <li>
+            GALLERY
+            <ul>
+                <li><a class="button selected-button" data-role="button" href="#tabstrip-login">VIEW</a></li>
+               
+            </ul>
+        </li>
+        <li>
+            CHECK CENTERS
+            <ul>
+                 <li><a class="button selected-button" data-role="button" href="#tabstrip-login">VIEW</a></li>
+               
+            </ul>
+        </li>
+		<li>
+            CONTACTS
+            <ul>
+                <li><a class="button selected-button" data-role="button" href="#tabstrip-login">CONTACT</a></li>
+            </ul>
+        </li>
+    </ul>
+            </div>
+        </div>
+
+        <!--Login-->
+        <div id="tabstrip-login" 
+             data-role="view"  
+             data-title="Login" >
+
+            <div data-role="content" class="view-content">
+               <div data-role="navbar" id="edit-navbar">
+              <a data-role="backbutton" id="back" data-align="left">Back</a>
+             </div>
+		      <li>The centers goes here</li> 
+  
+            </div>
+
+        </div>
+
+       
+
+        <!--Weather-->
+        
+        <!--Weather forecast template-->
+       
+        <!--Layout-->
+        <div data-role="layout" data-id="tabstrip-layout" >
+
+            <!--Header-->
+            <div data-role="header">
+                <div data-role="navbar">
+                    <span data-role="view-title"></span>
+                </div>
+            </div>
+
+            <!--Footer-->
+            <div data-role="footer">
+                <div data-role="tabstrip">
+                    <a href="#tabstrip-home" data-icon="home">Home</a>
+                    <a href="#tabstrip-login" data-icon="contacts">Contacts</a>
+                    
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+        
