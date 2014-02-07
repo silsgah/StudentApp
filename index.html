@@ -7,23 +7,20 @@
         <link href="styles/main.css" rel="stylesheet" />
 
         <script src="cordova.js"></script>
-        <script src="kendo/js/jquery.min.js"></script>
-        <script src="kendo/js/kendo.mobile.min.js"></script>
-      
-
-       
-        <script src="scripts/app.js"></script>
+        
 
     </head>
     <body>
         <!--Home-->
+		 
+       
         <div id="tabstrip-home" 
              data-role="view"  
              data-title="RecycleApp">
 
             <div data-role="content" class="view-content">
                 <h1>Welcome To Recycling App For A Better Ghana!</h1>
-                <a id="skin-change" data-role="button" data-click="app.changeSkin">Flat</a>
+                
                 <ul data-role="listview" data-style="inset" data-type="group">
         <li>
             History
@@ -81,18 +78,11 @@
               <a data-role="backbutton" id="back" data-align="left">Back</a>
              </div>
 		      <li>Our Contact Information Goes here</li> 
-  
+                <ul id ="itemslist" ></ul>
             </div>
 
         </div>
-
        
-
-        <!--Weather-->
-        
-        <!--Weather forecast template-->
-       
-        <!--Layout-->
         <div data-role="layout" data-id="tabstrip-layout" >
 
             <!--Header-->
@@ -111,6 +101,17 @@
                 </div>
             </div>
         </div>
+		<script type="text/x-kendo-template" id="template">
+       
+           
+				<a href="/" > ${data.Country1}</a>
+				
+		
+           
+        </script> 
+		<script src="kendo/js/jquery.min.js"></script>
+        <script src="kendo/js/kendo.mobile.min.js"></script>
+        <script src="scripts/app.js"></script>
     </body>
 </html>
         
