@@ -1,358 +1,553 @@
-body, html {
-	margin: 0;
-	height: 100%;
-	width: 100%;
+body
+{
+    font: Arial, sans-serif;
 }
 
-/* COMMON STYLES*/
-.view-content h1 {
-	color: #42454a;
-	font-size: 1.8em;
+input[type="text"], input[type="password"] {
+    margin: 4px;
+    width: 70%;
 }
 
-.view-content h1.welcome {
-	text-align: center;
+.buttonArea,
+.footerText
+{
+    text-align: center;
 }
 
-.view-content h3 {
-	color: #42454a;
-	font-size: 1.1em;
+#txtName
+{
+    border: 1px solid #AAA;
+    border-radius: 15px;
+    position:static;
+    margin-left: 1em;
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+    background:white;
+    color: black;
+    padding: 7px;
 }
 
-.view-content p {
-	color: #4a4e54;
-	font-size: 1em;
+.km-ios .km-header { background: #E6E6E6; }
+
+.k-invalid-msg
+{
+    background: rgba(255, 0, 0, .2);
+    padding: 2px 5px 2px 4px;
+    position: absolute;
+    right: 0;
+    font-size: .6rem;
+    top: 0;
 }
 
-/* IMAGE STYLES*/
-.img {
-	background-image: url(../styles/images/icenium.png);
-	background-repeat: no-repeat;
-	text-align: center;
-	width: 320px;
-	height: 193px;
-	margin: 0px auto;
+    .km-android .k-invalid-msg { background: rgba(255, 0, 0, .6); }
+
+/* Modals */
+
+.km-ios .km-modalview .km-header { background: #D88E2E; }
+
+.km-modalview .km-content .message {
+    padding: 20px;
 }
 
-.logo {
-	background-image: url(../styles/images/logo.png);
-	background-repeat: no-repeat;
-	width: 85px;
-	height: 60px;
-	margin: 40px auto;
+/* Navigation */
+.km-footer .km-tabstrip {
+    background: #D88E2E;
+    background: -moz-linear-gradient(top,  #e0a558 0%, #e0a558 50%, #d88e2e 50%, #d88e2e 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e0a558), color-stop(50%,#e0a558), color-stop(50%,#d88e2e), color-stop(100%,#d88e2e));
+    background: -webkit-linear-gradient(top,  #e0a558 0%,#e0a558 50%,#d88e2e 50%,#d88e2e 100%);
+    background: -o-linear-gradient(top,  #e0a558 0%,#e0a558 50%,#d88e2e 50%,#d88e2e 100%);
+    background: -ms-linear-gradient(top,  #e0a558 0%,#e0a558 50%,#d88e2e 50%,#d88e2e 100%);
+    background: linear-gradient(to bottom,  #e0a558 0%,#e0a558 50%,#d88e2e 50%,#d88e2e 100%);
 }
 
-/* BUTTON STYLES*/
-.buttonArea {
-	text-align: center;
+.km-ios .km-tabstrip {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+    .km-ios .km-tabstrip .km-button {
+        border: 0 solid transparent;
+        box-shadow: none;
+    }
+    .km-ios .km-tabstrip .km-icon { 
+        color: rgba(255,255,255,.5);
+        background-image: none;
+    }
+    .km-ios .km-tabstrip .km-text { 
+        color: rgba(255,255,255,.5);
+        text-shadow: none;
+    }
+    .km-ios .km-tabstrip .km-badge { display: block; }
+
+.km-icon::before, .km-contactadd::before, .km-rowdelete::before, .km-rowinsert::before, .km-detaildisclose::before { color: transparent; }
+.km-ios .km-tabstrip .km-state-active .km-icon, .km-android .km-tabstrip .km-state-active .km-icon, .km-ios .km-tabstrip .km-state-active .km-text { color: #fff; }
+
+.km-android .km-tabstrip .km-badge { 
+    bottom: -0.3em;
+    font-size: 10px;
+    background: #D88E2E;
 }
 
-.login-button {
-	width: 50%;
-	max-width: 300px;
-	font-size: .9em;
-	-webkit-appearance: none;
+.km-android .km-buttongroup .km-state-active,
+.km-android .km-navbar .km-buttongroup .km-state-active,
+.km-android .km-touch-scrollbar,
+.km-ios .km-header > .km-buttongroup .km-state-active,
+.km-ios .km-footer > .km-buttongroup .km-state-active,
+.km-ios .km-content .km-buttongroup .km-state-active
+    { background: #D88E2E; }
+
+/* Login & Register */
+
+#login-view .km-content, #register-view .km-content {
+    padding: 20% 0 0;
+    text-align: center;
 }
 
-/* MAP STYLES*/
-#no-map {
-	position: absolute;
-	margin: 0 auto;
-	top: 40%;    
-	text-align: center;
+.km-horizontal #login-view .km-content, .km-horizontal #register-view .km-content { padding: 10px 0 0; }
+
+#login-view .km-content input[type="text"],
+#login-view .km-content input[type="password"],
+#register-view .km-content input[type="text"],
+#register-view .km-content input[type="password"] {
+    display: block;
+    margin: 10px auto;
 }
 
-#map-canvas {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
+/* Account View */
+#login-view { font-weight: normal; }
+
+#login-view ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-#map-search-wrap {
-	position: absolute;
-	z-index: 10;
-	background-color: rgba(0, 0, 0, 0.5);
-	padding: 3px;
-	box-sizing: border-box;
-	-webkit-box-sizing: border-box;
+#account-view header h2 {
+    padding: 10px;
+    text-align: center;
+    text-transform: capitalize;
+}
+    .km-android #account-view header h2 { color: #fff; }
+
+.order-history-list li .order-number { 
+    float: left;
+    margin: 5px 0;
+}
+.order-history-list li .order-total { 
+    float: right;
+    margin: 5px 1rem 5px 0;
+}
+.order-history-list li .order-date { 
+    clear: both;
+    display: block;
+    font-weight: normal;
+    font-size: 12px;
 }
 
-#map-address {
-	position: absolute;
-	left: 0;
-	right: 0;
-	margin: 3px 50px 0px 50px;
-	background-color: #fff;
-	font-style: italic;
-	color: #000;
-	padding: 7px 10px;
-	border-radius: 3em;
-	border-width: 1px;
-	border-style: solid;
-	border-color: rgb(180, 180, 180);
-	border-bottom-color: rgb(255, 255, 255);
-	box-shadow: 0 -1px 0 #3C3C3C;
-	-moz-background-clip: border-box;
-	-webkit-background-clip: border-box;
-	background-clip: border-box;
+.km-android .order-history-list li .km-group-title {
+    border-top: 2px solid #aaa;
 }
 
-#map-search {
-	float: right;
-	width: 40px;
-	height: 40px;
-	color: #fff;
-	border: none;
-	background: none;
-	background-image: url(../styles/images/search.png);
-	background-repeat: no-repeat;
-	background-position: center center;
+.order-history-list li span {
+    font-size: 15px;
+}
+    .order-history-list li .item-title {
+        float: left;
+        display: block;
+        width: 55%;
+    }
+    .order-history-list li .item-quantity {
+        float: right;
+    }
+
+/* Main View */
+
+.km-buttongroup a
+{
+    text-decoration: none;
+    display: block;
+    height: 100%;
+    width: 100%;
 }
 
-#map-search:active {
-	background-image: url(../styles/images/search_active.png);
-	background-repeat: no-repeat;
+.album-art
+{
+    float: left;
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
 }
 
-#map-navigate-home {
-	float: left;
-	width: 40px;
-	height: 40px;
-	color: #fff;
-	border: none;
-	background: none;
-	background-image: url(../styles/images/location.png);
-	background-repeat: no-repeat;
-	background-position: center center;
+.album-artist
+{
+    font-size: .8em;
 }
 
-#map-navigate-home:active {
-	background-image: url(../styles/images/location_active.png);
-	background-repeat: no-repeat;
+.album-price
+{
+    font-size: .7em;
+    font-style: italic;
 }
 
-/* WEATHER STYLES*/
-.weather {
-	padding-top:50px;
+.album-cart
+{
+    float: right;
 }
 
-.weather .weather-title {
-	color: #fff;
-	font-size: 1.5em;
-	line-height: 1.2em;
-	text-shadow: none;
-	padding: 0;
-	margin: 0;
-	text-align: center;
-	position: absolute;
-	top: 10px;
-	left: 0;
-	width: 100%;
+.album-cart .km-icon.km-add, .album-cart .km-icon.cartQty
+{
+    font-size: .6em;
+    margin-right: .8em;
+    vertical-align: middle;
 }
 
-.weather-info {
-	color: #fff;
-	font-size: 1.2em;
-	text-shadow: none;
-	line-height: 1.8em;
-	display: inline-block;
+.album-cart .km-icon.cartQty {
+    padding-bottom: .45em;
 }
 
-.weather-info.date {
-	margin-top: 7px;
+.km-android #artists-view .km-buttongroup
+{
+    padding: 4px;
 }
 
-.weather-info.temperature {
-	margin-left: 5px;
+#artists-view .buttongroup.km-buttongroup .km-button
+{
+    padding: 0;
 }
 
-.weather-info.temperature.low {
-	color: rgba(0,0,0,0.5);
+#artists-view .buttongroup.km-buttongroup .km-button a
+{
+    height: 1em;
+    padding: .12em .2em .28em .2em;
+    font-size: 2em;
+    width: 1em;
+    text-align: center;
 }
 
-/* Weather Icons*/
-.weather-icon {
-	width: 64px;
-	height: 64px;
-	background-image: url(../styles/images/sprite-weather.png);
-	background-repeat: no-repeat;
-	float: right;
-	position: relative;
-	top: -6px;
-	left: -10px;
+#cart-view input[type="number"]
+{
+    min-width: 3.01em;
+    width: 100%;
+    border: 1px solid #999;
+    position: relative;
 }
 
-.weather-icon.sunny {
-	background-position: 0px 0px;
+.km-ios .km-list .km-icon
+{
+    color: #fff;
 }
 
-.weather-icon.cloudy {
-	background-position: 0px -64px;
+.km-tabstrip .km-badge
+{
+    top: 0;
+    right: 0;
 }
 
-.weather-icon.partly-cloudy {
-	background-position: 0px -128px;
+.search-container {
+    text-align: center;
 }
 
-.weather-icon.partly-sunny {
-	background-position: 0px -192px;
+.km-ios .search-container {
+    padding: 10px;
 }
 
-.weather-icon.shower {
-	background-position: 0px -256px;
+.km-ios .search-container input[type="text"] {
+    padding: 2px 2px 6px 2px;
+    margin: 0;
+    line-height: 20px;
+    height: 16px;
 }
 
-.weather-icon.foggy {
-	background-position: 0px -320px;
+.km-ios .search-container a {
+    margin: 0;
 }
 
-.weather-icon.storm {
-	background-position: 0px -384px;
+#about-view footer
+{
+    text-align: center;
 }
 
-.position-left {
-	float: left;
+#about-view .km-insetcontent {
+    padding: 10px 0 0;
 }
 
-.position-right {
-	float: right;
+/* Cart */
+
+.km-android .cart-header { margin-bottom: 1em; }
+
+.cart-header h3 {
+    padding: 5px 0;
+    background: #E6E6E6;
+    font-weight: normal;
+    text-align: center;
 }
 
-.position.center {
-	position: absolute;
-	margin: 0 auto;
-	width: 100%;
+    .km-android .cart-header h3 { background: #999; }
+
+.cart-header h1 {
+    padding: 5px 0;
+    background: #fff;
+    text-align: center;
 }
 
-/* DEVICE SPECIFIC STYLES*/
-#skin-change {
-	position: absolute;
-	right: 10px;
-	top: 10px;
+    .km-android .cart-header h1 {
+        background: #333;
+        color: #ddd;
+    }
+
+.album-cart {
+    margin-left: 10px;
 }
 
-.km-ios .km-listview-wrapper .km-listinset li {
-	background-color: #fff;
-	border-color: #ababab;
+#checkout-view input
+{
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 50%;
+    font-size: 1rem;
 }
 
-.km-ios .km-view .km-content {
-	background-image: none;
-	background: #f0f0f0;
+#checkout-view section {
+    padding: 0;
 }
 
-.km-tablet .km-ios .km-navbar .km-view-title {
-	color: #000;
-	text-shadow: 0 -1px rgba(255,255,255,0.3);
+/* Shipping */
+
+.validate {
+    padding: 10px 10%;
 }
 
-.km-android .view-content h1 {
-	color: #8a8b8f;
+.validate label { 
+    display: block; 
+    margin-top: 10px;
 }
 
-.km-android .view-content p,
-.km-android .view-content h3 {
-	color: #2e5968;
+.km-android .validate label {
+    color: #555;
+    margin-bottom: 10px;
 }
 
-.km-android .weather-info.temperature.low {
-	color: #2e5968;
+.validate input {
+    margin: 0 5px 10px 0;
+    padding: 0;
 }
 
-.km-ios .km-view .weather {
-	background: #5fb4ed; /* Old browsers */
-	background: -moz-linear-gradient(top, #5fb4ed 0%, #0076c5 74%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#5fb4ed), color-stop(74%,#0076c5)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, #5fb4ed 0%,#0076c5 74%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, #5fb4ed 0%,#0076c5 74%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, #5fb4ed 0%,#0076c5 74%); /* IE10+ */
-	background: linear-gradient(to bottom, #5fb4ed 0%,#0076c5 74%); /* W3C */
-}
-.km-ios7 .km-view .weather,
-.km-flat .km-view .weather {
-	background: #b0b0b0;
+.thank-you {
+    margin: 20% auto;
+    text-align: center;
 }
 
-.km-flat .km-list > li {
-	box-shadow: none;
+/* Album Lists */
+.km-listview h1, .km-listview h2 {
+    margin: 0;
+    font-size: 16px;
+    margin-left: 60px;
 }
 
-.km-ios .km-list > li,
-.km-flat .km-list > li {
-	background: none;
-	border: none;
+.km-listview h2 { 
+    font-weight: normal;
 }
 
-/* Separator Style*/
-.separator > .dark {
-	background: -moz-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 30%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0) 100%);
-	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0)), color-stop(30%,rgba(0,0,0,0.2)), color-stop(50%,rgba(0,0,0,0.2)), color-stop(70%,rgba(0,0,0,0.2)), color-stop(100%,rgba(0,0,0,0)));
-	background: -webkit-linear-gradient(left, rgba(0,0,0,0) 0%,rgba(0,0,0,0.2) 30%,rgba(0,0,0,0.2) 50%,rgba(0,0,0,0.2) 70%,rgba(0,0,0,0) 100%);
-	background: -o-linear-gradient(left, rgba(0,0,0,0) 0%,rgba(0,0,0,0.2) 30%,rgba(0,0,0,0.2) 50%,rgba(0,0,0,0.2) 70%,rgba(0,0,0,0) 100%);
-	background: -ms-linear-gradient(left, rgba(0,0,0,0) 0%,rgba(0,0,0,0.2) 30%,rgba(0,0,0,0.2) 50%,rgba(0,0,0,0.2) 70%,rgba(0,0,0,0) 100%);
-	background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,0.2) 30%,rgba(0,0,0,0.2) 50%,rgba(0,0,0,0.2) 70%,rgba(0,0,0,0) 100%);
-	height: 1px;
-	border: none;
-	width: 100%;
-	opacity: 0.3;
+.km-listview .album-price { 
+    display: block;
+    margin-left: 60px;
 }
 
-.separator > .light {
-	background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
-	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0)));
-	background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%);
-	background: -o-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%);
-	background: -ms-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%);
-	background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%);
-	height: 1px;
-	border: none;
-	width: 100%;
-	opacity: 0.3;
+.km-listview .qty-and-price {
+    font-size: 16px;
+    float: right;
+    width: 50px;
+    margin-left: 10px;
 }
 
-/* RETINA DISPLAY STYLES*/
-@media only screen and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi) {
-	.img {
-		background-image: url(../styles/images/icenium2x.png);
-		background-repeat: no-repeat;
-		background-size: 100%;
-	}
+.km-listview .qty-and-price strong {
+    display: block;
+    text-align: center;
+    margin-bottom: 15px;
+}
 
-	.logo {
-		background-image: url(../styles/images/logo2x.png);
-		background-repeat: no-repeat;
-		background-size: 100%;
-	}
+.km-listview .subtotal {
+    font-size: 12px;
+    clear: both;
+    text-align:right;
+    padding-top: 10px;
+}
 
-	#map-search {
-		background-image: url(../styles/images/search2x.png);
-		background-repeat: no-repeat;
-		background-size: 100%;
-	}
+/* About */
 
-	#map-search:active {
-		background-image: url(../styles/images/search_active2x.png);
-		background-repeat: no-repeat;
-		background-size: 100%;
-	}
+.km-ios #about-view .km-content { 
+    background: url('../Images/rays-background.png') no-repeat;
+    background-size: cover;
+}
 
-	#map-navigate-home {
-		background-image: url(../styles/images/location2x.png);
-		background-repeat: no-repeat;
-		background-size: 100%;
-	}
+.km-ios .km-horizontal #about-view .km-content { 
+    background: url('../Images/rays-background-horizontal.png') no-repeat 50% 50%;
+}
 
-	#map-navigate-home:active {
-		background-image: url(../styles/images/location_active2x.png);
-		background-repeat: no-repeat;
-		background-size: 100%;
-	}
+#about-view h1 {
+    font-size: 1.7em;
+    text-align: center;
+}
 
-	.weather-icon {
-		background-image: url(../styles/images/sprite-weather2x.png);
-		background-repeat: no-repeat;
-		background-size: 100%;
-	}
+#about-view img {
+    margin: 20px auto 5px;
+    display: block;
+}
+
+.km-ios #about-view h1, .km-ios #about-view p { color: #000; }
+
+#about-view p { text-align: center; }
+
+#about-view .footer-images {
+    text-align: center;
+    margin: 0 10% 20px;
+}
+
+    #about-view .footer-images img {
+        width: 80%;
+        background: #fff;
+        padding: 5px 20px 10px;
+        border-radius: 5px;
+    }
+
+#about-view footer .km-button
+{
+    padding: 10px;
+}
+
+#body .cart-delete-button
+{
+    background-color: #900;
+}
+
+/* Make Android look more like the v4.x style guide. */
+
+.km-android .km-navbar
+{
+    height: 48px;
+}
+
+.km-android.km-horizontal .km-view-title
+{
+    line-height: 2.5em;
+}
+
+.km-android.km-horizontal .km-tabstrip .km-text
+{
+    margin-top: 0;
+}
+
+.km-android .km-view {
+    -moz-box-direction: normal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.km-view-title {
+    visibility: visible;
+}
+
+.km-android .km-view-title {
+    text-align: left;
+    padding-left: 60px;
+}
+
+.km-android .km-view-title img {
+    vertical-align: middle;
+}
+
+.km-android .km-back,
+.km-android .km-navbar .km-button.km-back,
+.km-android .km-toolbar .km-button.km-back,
+.km-android .app-icon {
+    background-image: url("../Images/icon.png");
+    background-repeat: no-repeat;
+    width: 36px;
+    height: 36px;
+    margin: 6px 0 0 .8rem;
+    padding: 0;
+}
+
+.km-android .app-icon {
+    height: 36px;
+}
+
+.km-android .km-back * {
+    visibility: hidden;
+}
+
+.km-android .km-back::before {
+    border-color: #777;
+    content: " ";
+    position: absolute;
+    top: 50%;
+    margin-top: -0.32rem;
+    margin-left: -0.7rem;
+    border-style: solid;
+    border-width: 0 0 .24rem .24rem;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    width: .5rem;
+    height: .5rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.km-android .km-navbar {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFZJREFUeNpi/P//vwoDFHz9+vUzDw8PJ5ApDBMrKCj4DyKMQAph+MuXL+JAOQUgNkbCDMZEKIQwCChEGItHIar9WBVicyi6QgZcPkJWyIDP6zCFAAEGAPRWfgx4dcnyAAAAAElFTkSuQmCC);
+    background-repeat: repeat;
+    background-position: 0;
+}
+
+.km-android .km-navbar div {
+    display: inline-block;
+}
+
+.km-android .km-navbar [class*="item"] .action-buttons .km-button {
+    padding: 0;
+}
+
+.km-android .action-buttons .km-button .km-icon {
+    font-size: 1.5rem;
+    margin:.8rem .5rem;
+}
+
+.km-root .km-pane .km-view .km-action-overflow {
+    background-size: 100% 100%;
+    -webkit-background-clip: border-box;
+    background-color: white;
+    -webkit-mask-box-image: url(data:image/png;base64,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);
+}
+
+.km-android .km-tabstrip a
+{
+    color: #a8a8a8;
+}
+
+.km-android .km-tabstrip .km-text
+{
+    margin-top: 0;
+    text-indent: 0;
+    font-size: 1em;
+}
+
+.km-android .km-tabstrip .km-icon {
+    display: none;
+}
+
+#body .km-android .search-text
+{
+    font-size: 1em;
+    width: 100%;
+    margin-right: -36px;
+}
+
+.km-root .km-android .km-show-title::after
+{
+    display: none;
+    content: "";
 }

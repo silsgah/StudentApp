@@ -20,8 +20,30 @@
 
             <div data-role="content" class="view-content">
                 <h1>Welcome To Recycling App For A Better Ghana!</h1>
+                <div class="head"></div>
+				 
+                <div class="footer-images"><img src="Images/kendo-ui-logo.png"/></div>
+                <a data-role="button" data-rel="actionsheet" href="#learnmore-actions">Learn More On Recycling</a>
+           
+
+            <ul data-role="actionsheet" id="learnmore-actions" data-popup='{"direction": "left"}'>
+                <li><a href="#tabstrip-mainstart" data-action="reply">Go To Learning Center</a></li>
+				
+                <li><a href="#" data-action="reply">Visit Website</a></li>
+            </ul>
                 
-                <ul data-role="listview" data-style="inset" data-type="group">
+            </div>
+        </div>
+		<!--MainView-->
+           <div id="tabstrip-mainstart" 
+             data-role="view"  
+             data-title="Login" >
+
+            <div data-role="content" class="view-content">
+               <div data-role="navbar" id="edit-navbar">
+              <a data-role="backbutton" id="back" data-align="left">Back</a>
+             </div>
+		     <ul data-role="listview" data-style="inset" data-type="group">
         <li>
             History
             <ul>
@@ -65,9 +87,10 @@
             </ul>
         </li>
     </ul>
+                
             </div>
-        </div>
 
+        </div>
         <!--Login-->
         <div id="tabstrip-login" 
              data-role="view"  
@@ -77,7 +100,7 @@
                <div data-role="navbar" id="edit-navbar">
               <a data-role="backbutton" id="back" data-align="left">Back</a>
              </div>
-		      <li>Our Contact Information Goes here</li> 
+		     
                 <ul id ="itemslist" ></ul>
             </div>
 
@@ -102,13 +125,17 @@
             </div>
         </div>
 		<script type="text/x-kendo-template" id="template">
-       
-           
 				<a href="/" > ${data.Country1}</a>
-				
-		
-           
         </script> 
+		 <style scoped>
+   .head {
+	display: block;
+    margin: 1em;
+	height: 80px;
+	background: url(styles/awesomesauce-logo.png) no-repeat center center;
+}
+
+</style>
 		<script src="kendo/js/jquery.min.js"></script>
         <script src="kendo/js/kendo.mobile.min.js"></script>
         <script src="scripts/app.js"></script>
